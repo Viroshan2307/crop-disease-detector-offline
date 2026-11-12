@@ -1,0 +1,18 @@
+﻿Vision model v3 (MobileNetV3-Small, 13 classes, input 224)
+Training data: PlantVillage (near-copy grouped split) + 995 PlantDoc field photos
+Checkpoint: epoch 14/14 (best combined lab+field validation score)
+
+Lab val:    0.981
+Field val:  0.592  (179 PlantDoc photos, about +/-3.5 points of noise)
+Lab test:   0.976
+PlantDoc test (101 photos): NOT yet used (final exam only)
+
+Confidence threshold on field validation:
+  thr 0.0: answers 1.00 of photos, correct on 0.592
+  thr 0.5: answers 0.89 of photos, correct on 0.619
+  thr 0.6: answers 0.77 of photos, correct on 0.679
+  thr 0.7: answers 0.69 of photos, correct on 0.710
+  thr 0.8: answers 0.60 of photos, correct on 0.713
+  thr 0.9: answers 0.51 of photos, correct on 0.747
+
+Note: retrained after the first v3 run was lost. The first run gave lab val 0.974, field val 0.603, lab test 0.972. The differences are within noise.
