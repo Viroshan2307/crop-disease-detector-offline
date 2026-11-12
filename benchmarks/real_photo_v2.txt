@@ -1,0 +1,5 @@
+v2 model on PlantDoc real photos (1,282 images, never trained on), 12 Nov 2026
+With Other class: accuracy 1.7% (model said Other for 1,260 of 1,282 images)
+Ignoring Other, choosing among the 13 disease classes: accuracy 23.5%
+Per class (13-class view): Tomato late blight 74%, early blight 45%, Septoria 32%, yellow leaf curl 31%, potato early blight 24%, bacterial spot / mosaic virus / leaf mold about 0%
+Cause: model learned lab style (plain background, one leaf), not the disease. Other class made it worse because all Other photos were messy web photos.
