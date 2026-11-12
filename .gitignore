@@ -218,3 +218,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project files that should not be uploaded
+data/*
+!data/.gitkeep
+*.zip
+*.pth
