@@ -1,0 +1,108 @@
+{
+  "Tomato___Yellow_Leaf_Curl_Virus": {
+    "name_en": "Tomato Yellow Leaf Curl Virus",
+    "symptoms_en": "Plants stay small and bushy. Leaves curl downward, crinkle and turn yellow, and older leaves become leathery.",
+    "cause_en": "A virus carried by the whitefly. It also spreads when infected seedlings are moved to a new field.",
+    "treatment_en": "A virus cannot be cured. Pull out and destroy infected plants, put up yellow sticky traps and remove weeds. Ask your local agriculture officer which insecticide to use.",
+    "prevention_en": "Raise seedlings in a protected nursery and plant only healthy seedlings. Grow a maize or sorghum border around the field and keep weeds under control.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato leaf curl pages (tomato_diseases_6, tomato_4)"]
+  },
+  "Tomato___Early_blight": {
+    "name_en": "Tomato Early Blight",
+    "symptoms_en": "Brown spots with rings like a bull's eye appear on the leaves, often with a yellow edge. Similar rings can appear on the fruit.",
+    "cause_en": "A fungus that survives in plant debris and can come with the seed. Rain and wind spread it, mostly in warm, humid, wet weather.",
+    "treatment_en": "Remove and destroy affected leaves and old plant debris. Treating seed with Trichoderma helps. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Rotate crops, clear plant debris after harvest and use healthy seed.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato_diseases_2"]
+  },  "Tomato___Septoria_leaf_spot": {
+    "name_en": "Tomato Septoria Leaf Spot",
+    "symptoms_en": "Small round spots with a grey centre and a dark edge appear on the leaves. The spots join together, and the leaves dry up and drop.",
+    "cause_en": "A fungus that survives in plant debris. Rain splash spreads it, and high humidity makes it worse.",
+    "treatment_en": "Remove and destroy the affected leaves and plant parts. Treating seed with Trichoderma helps. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Clear plant debris after harvest, rotate crops and avoid wetting the leaves when watering.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato_diseases_4"]
+  },  "Tomato___Bacterial_spot": {
+    "name_en": "Tomato Bacterial Spot",
+    "symptoms_en": "Small brown, water-soaked, round spots with a yellow ring appear on the leaves, and older leaves drop. Rough, scabby spots appear on the fruit.",
+    "cause_en": "A bacterium that survives in plant debris and can come with the seed. Rain splash spreads it, mostly in moist weather.",
+    "treatment_en": "Remove and destroy affected leaves and plant debris. Ask your local agriculture officer what spray to use.",
+    "prevention_en": "Use disease-free seed, clear plant debris after harvest and avoid wetting the leaves when watering.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato_diseases_11"]
+  },  "Tomato___Late_blight": {
+    "name_en": "Tomato Late Blight",
+    "symptoms_en": "Water-soaked, dark lesions appear on the leaves and stems, with white growth on the leaf underside in wet weather. The fruit develops a dark brown rot.",
+    "cause_en": "A fungus-like disease that thrives in cool nights, warm days and long wet spells.",
+    "treatment_en": "Remove and destroy infected plants and plant parts. Ask your local agriculture officer which fungicide to use and when.",
+    "prevention_en": "Plant in well-drained soil, rotate crops, and treat seed with Trichoderma.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato_diseases_8"]
+  },  "Tomato___Leaf_Mold": {
+    "name_en": "Tomato Leaf Mold",
+    "symptoms_en": "Pale yellow-green spots appear on the upper side of the leaves, with an olive-brown mold on the underside. It starts on the oldest leaves.",
+    "cause_en": "A fungus that thrives in very humid air, above about 85 percent. Wind, rain and tools spread it.",
+    "treatment_en": "Remove and destroy affected leaves, improve the airflow between plants and keep the leaves dry. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Water at the base of the plant or by drip, space the plants well, clear plant debris after harvest and clean the stakes and tools.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["University of Minnesota Extension: Tomato leaf mold (extension.umn.edu/disease-management/tomato-leaf-mold)"]
+  },  "Tomato___Spider_mites": {
+    "name_en": "Tomato Spider Mites",
+    "symptoms_en": "Leaves turn reddish brown or bronze, and fine silky webbing appears on them. The leaves wither and dry, and flowering and fruiting suffer.",
+    "cause_en": "Tiny red spider mites that live on the underside of the leaves and suck the sap.",
+    "treatment_en": "Remove and destroy badly affected leaves. Ask your local agriculture officer which spray to use and how to apply it safely.",
+    "prevention_en": "Check the underside of the leaves regularly, so you catch the mites early, and keep weeds down around the plants.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato_7 (red spider mite)"]
+  },  "Potato___Early_blight": {
+    "name_en": "Potato Early Blight",
+    "symptoms_en": "Brown-black, angular spots with rings appear on the leaves.",
+    "cause_en": "A fungus whose spores survive for many months in the soil and in plant debris. Wind spreads it, mostly in warm weather with occasional rain, and weak crops are hit harder.",
+    "treatment_en": "Remove and destroy affected leaves and plant debris. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Plant disease-free seed tubers, destroy plant debris after harvest and keep the crop well fed and healthy. Ask your local agriculture officer about varieties with better resistance.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: potato early blight (veg_potato_2)"]
+  },  "Potato___Late_blight": {
+    "name_en": "Potato Late Blight",
+    "symptoms_en": "Water-soaked spots on the leaves turn purple-brown and then black, with white growth on the underside. The stems can topple, and the tubers become purple-brown.",
+    "cause_en": "Infected seed tubers and infected soil start the disease. It spreads fast in cool, humid weather.",
+    "treatment_en": "Remove and destroy infected plants. Ask your local agriculture officer which protective spray to use and when.",
+    "prevention_en": "Plant healthy seed tubers and avoid bruising the tubers at harvest. Ask your local agriculture officer which resistant varieties suit your area.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: potato late blight (potato_phdiseases_4)"]
+  },  "Tomato___Mosaic_virus": {
+    "name_en": "Tomato Mosaic Virus",
+    "symptoms_en": "Leaves show light and dark green mottling, and young leaves can be distorted. Plants stay stunted, and the fruit can show yellow blotches.",
+    "cause_en": "A virus that can come with the seed and survives in plant debris. It spreads on hands, clothes and tools during routine work in the field.",
+    "treatment_en": "A virus cannot be cured. Remove and destroy infected plants as soon as you see the symptoms, and work in the diseased area last. Wash your hands with soap and clean your tools after handling infected plants.",
+    "prevention_en": "Use disease-free seed and healthy seedlings, rotate crops and keep the field clean of plant debris and weeds.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato mosaic (tomato_diseases_12)", "University of Florida IFAS Extension: Tomato Mosaic Virus (ToMV) and its Management", "Ohio State University: Tomato Mosaic"]
+  },  "Tomato___Target_Spot": {
+    "name_en": "Tomato Target Spot",
+    "symptoms_en": "Brown-black spots with faint rings, like a target, appear on the leaves and stems, often with a yellow halo. On the fruit the spots grow into large, sunken, pitted patches.",
+    "cause_en": "A fungus that survives on plant debris and on many other crops. It develops in warm weather with long periods of wet leaves.",
+    "treatment_en": "Remove and destroy badly affected leaves and plant debris. Ask your local agriculture officer which fungicide to use, because some fungicides no longer work well against this disease.",
+    "prevention_en": "Clear plant debris after harvest, rotate crops and avoid keeping the leaves wet for long. This disease looks like early blight and bacterial spot, so ask your local agriculture officer to confirm it.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["University of Florida IFAS Extension: Target spot of tomato (EDIS PP351)", "University of Kentucky Plant Pathology: Foliar Diseases of Tomato (PPFS-VG-25)", "INRAE Ephytia: Corynespora cassiicola on tomato"]
+  },  "Tomato___healthy": {
+    "name_en": "Healthy Tomato Leaf",
+    "symptoms_en": "No disease was found on this leaf. It looks green and even, without spots, rings, mold, webbing or curling.",
+    "cause_en": "Nothing to treat. A single leaf can look healthy while other parts of the plant are not, so check the whole plant now and then.",
+    "treatment_en": "No treatment is needed. If you see spots, curling or webbing later, scan another leaf or ask your local agriculture officer.",
+    "prevention_en": "Plant healthy seedlings grown in a protected nursery, in well-drained soil. Keep weeds down, especially in the first weeks after planting, and rotate with crops other than tomato, chilli or brinjal.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: tomato cultivation pages (horti_vegetables_tomato, orgfarm_tomato_cultivation)"]
+  },  "Potato___healthy": {
+    "name_en": "Healthy Potato Leaf",
+    "symptoms_en": "No disease was found on this leaf. It looks green and even, without spots, rings or white growth.",
+    "cause_en": "Nothing to treat. A single leaf can look healthy while other parts of the plant are not, so check the whole plant now and then.",
+    "treatment_en": "No treatment is needed. If you see spots or white growth later, scan another leaf or ask your local agriculture officer.",
+    "prevention_en": "Plant disease-free, well-sprouted seed tubers in well-drained soil and keep the field free of weeds in the first two months. Do not grow potato in the same field year after year, and avoid bruising the tubers at harvest.",
+    "name_ta": "", "symptoms_ta": "", "cause_ta": "", "treatment_ta": "", "prevention_ta": "",
+    "sources": ["TNAU Agritech Portal: potato cultivation pages (horti_vegetables_potato, orgfarm_potato)"]
+  }
+}
