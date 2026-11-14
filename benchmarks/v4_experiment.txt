@@ -1,0 +1,4 @@
+﻿v4 experiment (MobileNetV3-Large, label smoothing 0.1, same data/splits as v3). NOT adopted.
+Best: lab val 0.991 | field val 0.615 | lab test 0.991  (v3: 0.981 / 0.592 / 0.976)
+Field val, threshold -> share answered / accuracy: 0.5: 0.66/0.746; 0.6: 0.53/0.800; 0.7: 0.42/0.853; 0.8: 0.32/0.862; 0.9: 0.11/0.737
+Reason not adopted: field val below the 0.65 rule; gain is within noise; confidence is compressed so the 0.6 threshold answers far fewer photos.
