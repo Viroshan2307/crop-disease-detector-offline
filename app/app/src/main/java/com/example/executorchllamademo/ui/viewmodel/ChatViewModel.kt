@@ -549,6 +549,28 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
         showMediaSelector = !showMediaSelector
     }
 
+    private fun knowledgeText(label: String, lang: String): String? {
+        return try {
+            val txt = getApplication<Application>().assets.open("diseases.json")
+                .bufferedReader(Charsets.UTF_8).use { it.readText() }
+            val e = JSONObject(txt).optJSONObject(label) ?: return null
+            if (lang == "ta") {
+                e.getString("name_ta") + "\n\n" +
+                        "அறிகுறிகள்: " + e.getString("symptoms_ta") + "\n\n" +
+                        "காரணம்: " + e.getString("cause_ta") + "\n\n" +
+                        "சிகிச்சை: " + e.getString("treatment_ta") + "\n\n" +
+                        "தடுப்பு: " + e.getString("prevention_ta")
+            } else {
+                e.getString("name_en") + "\n\n" +
+                        "Symptoms: " + e.getString("symptoms_en") + "\n\n" +
+                        "Cause: " + e.getString("cause_en") + "\n\n" +
+                        "Treatment: " + e.getString("treatment_en") + "\n\n" +
+                        "Prevention: " + e.getString("prevention_en")
+            }
+        } catch (ex: Exception) {
+            null
+        }
+    }
     private var leafClassifier: LeafClassifier? = null
 
     private fun scanLeaf(uri: Uri) {
@@ -571,10 +593,11 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                 ETLogging.getInstance().log("Leaf scan: " + top3 + " in " + ms + " ms")
                 if (r.isSure()) {
                     addSystemMessage("Detected: " + name + " (" + pct + "%), vision time " + ms + " ms")
+                    knowledgeText(r.label, "en")?.let { addSystemMessage(it) }
+                    knowledgeText(r.label, "ta")?.let { addSystemMessage(it) }
                     if (isModelReady) {
-                        inputText = "A farmer's leaf was diagnosed as " + name + " by an image model. " +
-                            "In under 100 words explain what it is, how to treat it and how to prevent it. " +
-                            "Do not give pesticide doses; tell the farmer to ask the local agriculture officer."
+                        val kb = knowledgeText(r.label, "en") ?: ""
+                        inputText = "Rewrite the text below in simple words, in under 60 words. Start directly with the summary, no introduction. Use ONLY facts from the text. Do not add any other cause, advice, chemical or variety. If the text mentions an insecticide or fungicide, say only: ask your local agriculture officer which one to use.\n\nTEXT:\n" + kb
                         sendMessage()
                     } else {
                         addSystemMessage("Llama is not loaded, so no advice can be written.")

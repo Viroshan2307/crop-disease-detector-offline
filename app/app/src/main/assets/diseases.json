@@ -1,0 +1,202 @@
+{
+  "Potato___Early_blight": {
+    "name_en": "Potato Early Blight",
+    "symptoms_en": "Brown-black, angular spots with rings appear on the leaves.",
+    "cause_en": "A fungus whose spores survive for many months in the soil and in plant debris. Wind spreads it, mostly in warm weather with occasional rain, and weak crops are hit harder.",
+    "treatment_en": "Remove and destroy affected leaves and plant debris. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Plant disease-free seed tubers, destroy plant debris after harvest and keep the crop well fed and healthy. Ask your local agriculture officer about varieties with better resistance.",
+    "name_ta": "உருளைக்கிழங்கு முன்பருவ இலைக்கருகல் நோய்",
+    "symptoms_ta": "இலைகளில் வளையங்களுடன் கூடிய, கோணல் வடிவ பழுப்பு-கருப்புப் புள்ளிகள் தோன்றும்.",
+    "cause_ta": "மண்ணிலும் பயிர்க் கழிவுகளிலும் பல மாதங்கள் உயிர்வாழும் பூஞ்சை இது. காற்றால் பரவும்; அவ்வப்போது மழை பெய்யும் வெப்பமான காலத்தில் அதிகமாகும்; பலவீனமான பயிர்கள் அதிகம் பாதிக்கப்படும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட இலைகளையும் பயிர்க் கழிவுகளையும் அகற்றி அழியுங்கள். எந்தப் பூஞ்சைக்கொல்லியைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "நோயற்ற விதைக் கிழங்குகளை நடுங்கள்; அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அழியுங்கள்; பயிரை நல்ல ஊட்டத்துடன் ஆரோக்கியமாக வைத்திருங்கள். நோய் எதிர்ப்புத் திறன் கொண்ட இரகங்கள் பற்றி உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: potato early blight (veg_potato_2)"
+    ]
+  },
+  "Potato___Late_blight": {
+    "name_en": "Potato Late Blight",
+    "symptoms_en": "Water-soaked spots on the leaves turn purple-brown and then black, with white growth on the underside. The stems can topple, and the tubers become purple-brown.",
+    "cause_en": "Infected seed tubers and infected soil start the disease. It spreads fast in cool, humid weather.",
+    "treatment_en": "Remove and destroy infected plants. Ask your local agriculture officer which protective spray to use and when.",
+    "prevention_en": "Plant healthy seed tubers and avoid bruising the tubers at harvest. Ask your local agriculture officer which resistant varieties suit your area.",
+    "name_ta": "உருளைக்கிழங்கு பின்பருவ இலைக்கருகல் நோய்",
+    "symptoms_ta": "இலைகளில் நீர் கசிந்தது போன்ற புள்ளிகள் தோன்றி ஊதா-பழுப்பாகவும் பின்னர் கருப்பாகவும் மாறும்; அடிப்பக்கத்தில் வெண்ணிற வளர்ச்சி இருக்கும். தண்டுகள் சாயலாம்; கிழங்குகள் ஊதா-பழுப்பு நிறமாகும்.",
+    "cause_ta": "நோயுற்ற விதைக் கிழங்குகளாலும் நோயுற்ற மண்ணாலும் நோய் தொடங்கும். குளிர்ந்த ஈரப்பதமான வானிலையில் வேகமாகப் பரவும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட செடிகளை அகற்றி அழியுங்கள். எந்தப் பாதுகாப்பு மருந்தை எப்போது தெளிக்க வேண்டும் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "ஆரோக்கியமான விதைக் கிழங்குகளை நடுங்கள்; அறுவடையின்போது கிழங்குகளில் அடிபடாமல் பார்த்துக்கொள்ளுங்கள். உங்கள் பகுதிக்கு ஏற்ற நோய் எதிர்ப்பு இரகங்கள் பற்றி உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: potato late blight (potato_phdiseases_4)"
+    ]
+  },
+  "Potato___healthy": {
+    "name_en": "Healthy Potato Leaf",
+    "symptoms_en": "No disease was found on this leaf. It looks green and even, without spots, rings or white growth.",
+    "cause_en": "Nothing to treat. A single leaf can look healthy while other parts of the plant are not, so check the whole plant now and then.",
+    "treatment_en": "No treatment is needed. If you see spots or white growth later, scan another leaf or ask your local agriculture officer.",
+    "prevention_en": "Plant disease-free, well-sprouted seed tubers in well-drained soil and keep the field free of weeds in the first two months. Do not grow potato in the same field year after year, and avoid bruising the tubers at harvest.",
+    "name_ta": "ஆரோக்கியமான உருளைக்கிழங்கு இலை",
+    "symptoms_ta": "இந்த இலையில் நோய் எதுவும் கண்டறியப்படவில்லை. புள்ளிகள், வளையங்கள், வெண்ணிற வளர்ச்சி எதுவுமின்றி பச்சையாகவும் சீராகவும் உள்ளது.",
+    "cause_ta": "சிகிச்சை தேவையில்லை. ஒரு இலை ஆரோக்கியமாகத் தெரிந்தாலும் செடியின் மற்ற பகுதிகள் பாதிக்கப்பட்டிருக்கலாம்; எனவே அவ்வப்போது முழுச் செடியையும் பாருங்கள்.",
+    "treatment_ta": "சிகிச்சை தேவையில்லை. பின்னர் புள்ளிகள் அல்லது வெண்ணிற வளர்ச்சி தெரிந்தால் வேறு இலையை ஸ்கேன் செய்யுங்கள் அல்லது உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "நோயற்ற, நன்கு முளைவிட்ட விதைக் கிழங்குகளை நீர் நன்கு வடியும் நிலத்தில் நடுங்கள்; முதல் இரண்டு மாதங்கள் வயலைக் களையின்றி வைத்திருங்கள். ஒரே வயலில் ஆண்டுதோறும் உருளைக்கிழங்கு பயிரிடாதீர்கள்; அறுவடையில் கிழங்குகளில் அடிபடுவதைத் தவிருங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: potato cultivation pages (horti_vegetables_potato, orgfarm_potato)"
+    ]
+  },
+  "Tomato___Bacterial_spot": {
+    "name_en": "Tomato Bacterial Spot",
+    "symptoms_en": "Small brown, water-soaked, round spots with a yellow ring appear on the leaves, and older leaves drop. Rough, scabby spots appear on the fruit.",
+    "cause_en": "A bacterium that survives in plant debris and can come with the seed. Rain splash spreads it, mostly in moist weather.",
+    "treatment_en": "Remove and destroy affected leaves and plant debris. Ask your local agriculture officer what spray to use.",
+    "prevention_en": "Use disease-free seed, clear plant debris after harvest and avoid wetting the leaves when watering.",
+    "name_ta": "தக்காளி பாக்டீரியா இலைப்புள்ளி நோய்",
+    "symptoms_ta": "இலைகளில் நீர் கசிந்தது போன்ற சிறிய பழுப்பு நிற வட்டப் புள்ளிகள் தோன்றும்; சுற்றிலும் மஞ்சள் வளையம் இருக்கும். பழைய இலைகள் உதிரும். பழங்களில் சொரசொரப்பான சொறி போன்ற புள்ளிகள் தோன்றும்.",
+    "cause_ta": "பயிர்க் கழிவுகளிலும் விதையிலும் வாழும் பாக்டீரியா இது. மழைத் துளிகள் தெறிப்பதால் பரவும்; ஈரமான காலத்தில் அதிகமாகும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட இலைகளையும் பயிர்க் கழிவுகளையும் அகற்றி அழியுங்கள். எந்த மருந்தைத் தெளிக்கலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "நோயற்ற விதையைப் பயன்படுத்துங்கள், அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அகற்றுங்கள், நீர் பாய்ச்சும்போது இலைகளை நனைப்பதைத் தவிருங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato_diseases_11"
+    ]
+  },
+  "Tomato___Early_blight": {
+    "name_en": "Tomato Early Blight",
+    "symptoms_en": "Brown spots with rings like a bull's eye appear on the leaves, often with a yellow edge. Similar rings can appear on the fruit.",
+    "cause_en": "A fungus that survives in plant debris and can come with the seed. Rain and wind spread it, mostly in warm, humid, wet weather.",
+    "treatment_en": "Remove and destroy affected leaves and old plant debris. Treating seed with Trichoderma helps. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Rotate crops, clear plant debris after harvest and use healthy seed.",
+    "name_ta": "தக்காளி முன்பருவ இலைக்கருகல் நோய்",
+    "symptoms_ta": "இலைகளில் வட்டம் வட்டமாக வளையங்களுடன் கூடிய பழுப்பு நிறப் புள்ளிகள் தோன்றும்; சுற்றிலும் மஞ்சள் விளிம்பு இருக்கலாம். பழங்களிலும் இதுபோன்ற வளையங்கள் தோன்றலாம்.",
+    "cause_ta": "பயிர்க் கழிவுகளிலும் விதையிலும் வாழும் பூஞ்சை இது. மழை, காற்று மூலம் பரவும்; வெப்பமான ஈரப்பதமான காலத்தில் அதிகமாகும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட இலைகளையும் பழைய பயிர்க் கழிவுகளையும் அகற்றி அழியுங்கள். டிரைக்கோடெர்மா மூலம் விதை நேர்த்தி செய்வது உதவும். எந்தப் பூஞ்சைக்கொல்லியைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "பயிர் சுழற்சி செய்யுங்கள், அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அகற்றுங்கள், ஆரோக்கியமான விதையைப் பயன்படுத்துங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato_diseases_2"
+    ]
+  },
+  "Tomato___Late_blight": {
+    "name_en": "Tomato Late Blight",
+    "symptoms_en": "Water-soaked, dark lesions appear on the leaves and stems, with white growth on the leaf underside in wet weather. The fruit develops a dark brown rot.",
+    "cause_en": "A fungus-like disease that thrives in cool nights, warm days and long wet spells.",
+    "treatment_en": "Remove and destroy infected plants and plant parts. Ask your local agriculture officer which fungicide to use and when.",
+    "prevention_en": "Plant in well-drained soil, rotate crops, and treat seed with Trichoderma.",
+    "name_ta": "தக்காளி பின்பருவ இலைக்கருகல் நோய்",
+    "symptoms_ta": "இலைகளிலும் தண்டுகளிலும் நீர் கசிந்தது போன்ற கருமையான புள்ளிகள் தோன்றும்; ஈரமான காலத்தில் இலையின் அடிப்பக்கத்தில் வெண்ணிற வளர்ச்சி தெரியும். பழங்கள் கரும்பழுப்பு நிறமாக அழுகும்.",
+    "cause_ta": "குளிர்ந்த இரவுகள், வெப்பமான பகல், நீண்ட ஈரப்பதமான காலங்களில் வேகமாகப் பரவும் பூஞ்சை போன்ற நோய்க்காரணி இது.",
+    "treatment_ta": "பாதிக்கப்பட்ட செடிகளையும் செடிப் பாகங்களையும் அகற்றி அழியுங்கள். எந்தப் பூஞ்சைக்கொல்லியை எப்போது தெளிக்க வேண்டும் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "நீர் நன்கு வடியும் நிலத்தில் பயிரிடுங்கள், பயிர் சுழற்சி செய்யுங்கள், டிரைக்கோடெர்மா மூலம் விதை நேர்த்தி செய்யுங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato_diseases_8"
+    ]
+  },
+  "Tomato___Leaf_Mold": {
+    "name_en": "Tomato Leaf Mold",
+    "symptoms_en": "Pale yellow-green spots appear on the upper side of the leaves, with an olive-brown mold on the underside. It starts on the oldest leaves.",
+    "cause_en": "A fungus that thrives in very humid air, above about 85 percent. Wind, rain and tools spread it.",
+    "treatment_en": "Remove and destroy affected leaves, improve the airflow between plants and keep the leaves dry. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Water at the base of the plant or by drip, space the plants well, clear plant debris after harvest and clean the stakes and tools.",
+    "name_ta": "தக்காளி இலை பூஞ்சை நோய் (இலை அச்சு)",
+    "symptoms_ta": "இலையின் மேல்பக்கத்தில் வெளிர் மஞ்சள்-பச்சை நிறப் புள்ளிகள் தோன்றும்; அடிப்பக்கத்தில் ஆலிவ்-பழுப்பு நிற பூஞ்சை வளர்ச்சி இருக்கும். இது பழைய இலைகளில் முதலில் தொடங்கும்.",
+    "cause_ta": "மிக அதிக ஈரப்பதமான காற்றில் (சுமார் 85 சதவீதத்துக்கு மேல்) வளரும் பூஞ்சை இது. காற்று, மழை, கருவிகள் மூலம் பரவும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட இலைகளை அகற்றி அழியுங்கள்; செடிகளுக்கு இடையே காற்றோட்டத்தை அதிகரியுங்கள்; இலைகளை உலர்வாக வைத்திருங்கள். எந்தப் பூஞ்சைக்கொல்லியைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "செடியின் அடிப்பகுதியில் அல்லது சொட்டுநீர் மூலம் நீர் பாய்ச்சுங்கள்; செடிகளுக்கு இடையே போதிய இடைவெளி விடுங்கள்; அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அகற்றி, கம்புகளையும் கருவிகளையும் சுத்தம் செய்யுங்கள்.",
+    "sources": [
+      "University of Minnesota Extension: Tomato leaf mold (extension.umn.edu/disease-management/tomato-leaf-mold)"
+    ]
+  },
+  "Tomato___Mosaic_virus": {
+    "name_en": "Tomato Mosaic Virus",
+    "symptoms_en": "Leaves show light and dark green mottling, and young leaves can be distorted. Plants stay stunted, and the fruit can show yellow blotches.",
+    "cause_en": "A virus that can come with the seed and survives in plant debris. It spreads on hands, clothes and tools during routine work in the field.",
+    "treatment_en": "A virus cannot be cured. Remove and destroy infected plants as soon as you see the symptoms, and work in the diseased area last. Wash your hands with soap and clean your tools after handling infected plants.",
+    "prevention_en": "Use disease-free seed and healthy seedlings, rotate crops and keep the field clean of plant debris and weeds.",
+    "name_ta": "தக்காளி தேமல் வைரஸ் நோய்",
+    "symptoms_ta": "இலைகளில் வெளிர் பச்சை, அடர் பச்சைத் திட்டுகள் (தேமல்) தோன்றும்; இளம் இலைகள் உருமாறலாம். செடி வளராமல் குன்றும்; பழங்களில் மஞ்சள் திட்டுகள் தோன்றலாம்.",
+    "cause_ta": "விதை மூலம் வரக்கூடிய, பயிர்க் கழிவுகளில் வாழும் வைரஸ் இது. வயல் வேலைகளின்போது கைகள், உடைகள், கருவிகள் மூலம் பரவும்.",
+    "treatment_ta": "வைரஸ் நோயைக் குணப்படுத்த முடியாது. அறிகுறி தெரிந்தவுடன் பாதிக்கப்பட்ட செடிகளைப் பிடுங்கி அழியுங்கள்; பாதிக்கப்பட்ட இடத்தில் கடைசியாக வேலை செய்யுங்கள். பாதிக்கப்பட்ட செடிகளைத் தொட்ட பிறகு சோப்பால் கைகளைக் கழுவி, கருவிகளைச் சுத்தம் செய்யுங்கள்.",
+    "prevention_ta": "நோயற்ற விதையையும் ஆரோக்கியமான நாற்றுகளையும் பயன்படுத்துங்கள்; பயிர் சுழற்சி செய்யுங்கள்; வயலில் பயிர்க் கழிவுகளும் களைகளும் இல்லாமல் வைத்திருங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato mosaic (tomato_diseases_12)",
+      "University of Florida IFAS Extension: Tomato Mosaic Virus (ToMV) and its Management",
+      "Ohio State University: Tomato Mosaic"
+    ]
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "name_en": "Tomato Septoria Leaf Spot",
+    "symptoms_en": "Small round spots with a grey centre and a dark edge appear on the leaves. The spots join together, and the leaves dry up and drop.",
+    "cause_en": "A fungus that survives in plant debris. Rain splash spreads it, and high humidity makes it worse.",
+    "treatment_en": "Remove and destroy the affected leaves and plant parts. Treating seed with Trichoderma helps. Ask your local agriculture officer which fungicide to use.",
+    "prevention_en": "Clear plant debris after harvest, rotate crops and avoid wetting the leaves when watering.",
+    "name_ta": "தக்காளி செப்டோரியா இலைப்புள்ளி நோய்",
+    "symptoms_ta": "இலைகளில் சாம்பல் நிற மையமும் கருமையான விளிம்பும் கொண்ட சிறிய வட்டப் புள்ளிகள் தோன்றும். புள்ளிகள் ஒன்றுசேர்ந்து, இலைகள் காய்ந்து உதிரும்.",
+    "cause_ta": "பயிர்க் கழிவுகளில் வாழும் பூஞ்சை இது. மழைத் துளிகள் தெறிப்பதால் பரவும்; அதிக ஈரப்பதம் நோயை அதிகரிக்கும்.",
+    "treatment_ta": "பாதிக்கப்பட்ட இலைகளையும் செடிப் பாகங்களையும் அகற்றி அழியுங்கள். டிரைக்கோடெர்மா மூலம் விதை நேர்த்தி செய்வது உதவும். எந்தப் பூஞ்சைக்கொல்லியைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அகற்றுங்கள், பயிர் சுழற்சி செய்யுங்கள், நீர் பாய்ச்சும்போது இலைகளை நனைப்பதைத் தவிருங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato_diseases_4"
+    ]
+  },
+  "Tomato___Spider_mites": {
+    "name_en": "Tomato Spider Mites",
+    "symptoms_en": "Leaves turn reddish brown or bronze, and fine silky webbing appears on them. The leaves wither and dry, and flowering and fruiting suffer.",
+    "cause_en": "Tiny red spider mites that live on the underside of the leaves and suck the sap.",
+    "treatment_en": "Remove and destroy badly affected leaves. Ask your local agriculture officer which spray to use and how to apply it safely.",
+    "prevention_en": "Check the underside of the leaves regularly, so you catch the mites early, and keep weeds down around the plants.",
+    "name_ta": "தக்காளி சிவப்பு சிலந்திப் பேன்",
+    "symptoms_ta": "இலைகள் சிவப்பு கலந்த பழுப்பு அல்லது வெண்கல நிறமாக மாறும்; அவற்றின் மீது மெல்லிய பட்டு போன்ற நூலிழைகள் தெரியும். இலைகள் வாடிக் காய்ந்துவிடும்; பூப்பதும் காய்ப்பதும் பாதிக்கப்படும்.",
+    "cause_ta": "இலையின் அடிப்பக்கத்தில் வாழ்ந்து சாற்றை உறிஞ்சும் மிகச் சிறிய சிவப்பு சிலந்திப் பேன்கள் இவை.",
+    "treatment_ta": "மிகவும் பாதிக்கப்பட்ட இலைகளை அகற்றி அழியுங்கள். எந்த மருந்தை எவ்வாறு பாதுகாப்பாகத் தெளிக்க வேண்டும் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "இலைகளின் அடிப்பக்கத்தை அடிக்கடி பார்த்து, பேன்களை ஆரம்பத்திலேயே கண்டறியுங்கள்; செடிகளைச் சுற்றி களைகளைக் கட்டுப்படுத்துங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato_7 (red spider mite)"
+    ]
+  },
+  "Tomato___Target_Spot": {
+    "name_en": "Tomato Target Spot",
+    "symptoms_en": "Brown-black spots with faint rings, like a target, appear on the leaves and stems, often with a yellow halo. On the fruit the spots grow into large, sunken, pitted patches.",
+    "cause_en": "A fungus that survives on plant debris and on many other crops. It develops in warm weather with long periods of wet leaves.",
+    "treatment_en": "Remove and destroy badly affected leaves and plant debris. Ask your local agriculture officer which fungicide to use, because some fungicides no longer work well against this disease.",
+    "prevention_en": "Clear plant debris after harvest, rotate crops and avoid keeping the leaves wet for long. This disease looks like early blight and bacterial spot, so ask your local agriculture officer to confirm it.",
+    "name_ta": "தக்காளி இலக்குப் புள்ளி நோய்",
+    "symptoms_ta": "இலைகளிலும் தண்டுகளிலும் மங்கலான வளையங்களுடன் கூடிய பழுப்பு-கருப்புப் புள்ளிகள் (இலக்கு போன்ற தோற்றம்) தோன்றும்; சுற்றிலும் மஞ்சள் வளையம் இருக்கலாம். பழங்களில் புள்ளிகள் பெரிதாகி, குழி விழுந்த திட்டுகளாக மாறும்.",
+    "cause_ta": "பயிர்க் கழிவுகளிலும் பல பிற பயிர்களிலும் உயிர்வாழும் பூஞ்சை இது. இலைகள் நீண்ட நேரம் ஈரமாக இருக்கும் வெப்பமான வானிலையில் வளரும்.",
+    "treatment_ta": "மிகவும் பாதிக்கப்பட்ட இலைகளையும் பயிர்க் கழிவுகளையும் அகற்றி அழியுங்கள். சில பூஞ்சைக்கொல்லிகள் இந்த நோயில் இப்போது நன்கு வேலை செய்வதில்லை; எனவே எதைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "அறுவடைக்குப் பின் பயிர்க் கழிவுகளை அகற்றுங்கள்; பயிர் சுழற்சி செய்யுங்கள்; இலைகள் நீண்ட நேரம் ஈரமாக இருப்பதைத் தவிருங்கள். இந்நோய் முன்பருவ இலைக்கருகல், பாக்டீரியா இலைப்புள்ளி நோய்களைப் போலத் தோன்றும் என்பதால், உங்கள் பகுதி வேளாண்மை அலுவலரிடம் உறுதிசெய்து கொள்ளுங்கள்.",
+    "sources": [
+      "University of Florida IFAS Extension: Target spot of tomato (EDIS PP351)",
+      "University of Kentucky Plant Pathology: Foliar Diseases of Tomato (PPFS-VG-25)",
+      "INRAE Ephytia: Corynespora cassiicola on tomato"
+    ]
+  },
+  "Tomato___Yellow_Leaf_Curl_Virus": {
+    "name_en": "Tomato Yellow Leaf Curl Virus",
+    "symptoms_en": "Plants stay small and bushy. Leaves curl downward, crinkle and turn yellow, and older leaves become leathery.",
+    "cause_en": "A virus carried by the whitefly. It also spreads when infected seedlings are moved to a new field.",
+    "treatment_en": "A virus cannot be cured. Pull out and destroy infected plants, put up yellow sticky traps and remove weeds. Ask your local agriculture officer which insecticide to use.",
+    "prevention_en": "Raise seedlings in a protected nursery and plant only healthy seedlings. Grow a maize or sorghum border around the field and keep weeds under control.",
+    "name_ta": "தக்காளி மஞ்சள் இலை சுருட்டு வைரஸ் நோய்",
+    "symptoms_ta": "செடிகள் சிறியதாகவும் புதர் போலவும் இருக்கும். இலைகள் கீழ்நோக்கிச் சுருண்டு, சுருக்கமடைந்து மஞ்சளாகும்; பழைய இலைகள் தடிப்பாக மாறும்.",
+    "cause_ta": "வெள்ளை ஈ மூலம் பரவும் வைரஸ் இது. பாதிக்கப்பட்ட நாற்றுகளை வேறு வயலுக்கு எடுத்துச் செல்வதாலும் பரவும்.",
+    "treatment_ta": "வைரஸ் நோயைக் குணப்படுத்த முடியாது. பாதிக்கப்பட்ட செடிகளைப் பிடுங்கி அழித்துவிடுங்கள்; மஞ்சள் ஒட்டுப்பொறிகளை வையுங்கள்; களைகளை அகற்றுங்கள். எந்தப் பூச்சிக்கொல்லியைப் பயன்படுத்தலாம் என உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "பாதுகாப்பான நாற்றங்காலில் நாற்றுகளை வளர்த்து, ஆரோக்கியமான நாற்றுகளை மட்டும் நடுங்கள். வயலைச் சுற்றி மக்காச்சோளம் அல்லது சோளப் பயிரை வரப்புப் பயிராக வளர்த்து, களைகளைக் கட்டுப்படுத்துங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato leaf curl pages (tomato_diseases_6, tomato_4)",
+      "University of Florida IFAS Extension: Tomato Mosaic Virus (ToMV) and its Management (statement that plant viruses cannot be cured)"
+    ]
+  },
+  "Tomato___healthy": {
+    "name_en": "Healthy Tomato Leaf",
+    "symptoms_en": "No disease was found on this leaf. It looks green and even, without spots, rings, mold, webbing or curling.",
+    "cause_en": "Nothing to treat. A single leaf can look healthy while other parts of the plant are not, so check the whole plant now and then.",
+    "treatment_en": "No treatment is needed. If you see spots, curling or webbing later, scan another leaf or ask your local agriculture officer.",
+    "prevention_en": "Plant healthy seedlings grown in a protected nursery, in well-drained soil. Keep weeds down, especially in the first weeks after planting, and rotate with crops other than tomato, chilli or brinjal.",
+    "name_ta": "ஆரோக்கியமான தக்காளி இலை",
+    "symptoms_ta": "இந்த இலையில் நோய் எதுவும் கண்டறியப்படவில்லை. புள்ளிகள், வளையங்கள், பூஞ்சை, நூலிழைகள், சுருட்டல் எதுவுமின்றி பச்சையாகவும் சீராகவும் உள்ளது.",
+    "cause_ta": "சிகிச்சை தேவையில்லை. ஒரு இலை ஆரோக்கியமாகத் தெரிந்தாலும் செடியின் மற்ற பகுதிகள் பாதிக்கப்பட்டிருக்கலாம்; எனவே அவ்வப்போது முழுச் செடியையும் பாருங்கள்.",
+    "treatment_ta": "சிகிச்சை தேவையில்லை. பின்னர் புள்ளிகள், சுருட்டல் அல்லது நூலிழைகள் தெரிந்தால் வேறு இலையை ஸ்கேன் செய்யுங்கள் அல்லது உங்கள் பகுதி வேளாண்மை அலுவலரிடம் கேளுங்கள்.",
+    "prevention_ta": "பாதுகாப்பான நாற்றங்காலில் வளர்த்த ஆரோக்கியமான நாற்றுகளை, நீர் நன்கு வடியும் நிலத்தில் நடுங்கள். களைகளை, குறிப்பாக நட்ட முதல் வாரங்களில், கட்டுப்படுத்துங்கள்; தக்காளி, மிளகாய், கத்தரி அல்லாத பயிர்களுடன் சுழற்சி செய்யுங்கள்.",
+    "sources": [
+      "TNAU Agritech Portal: tomato cultivation pages (horti_vegetables_tomato, orgfarm_tomato_cultivation)"
+    ]
+  }
+}
