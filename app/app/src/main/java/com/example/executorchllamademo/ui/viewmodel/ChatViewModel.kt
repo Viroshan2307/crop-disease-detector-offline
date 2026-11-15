@@ -571,6 +571,15 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             null
         }
     }
+    private fun kbField(label: String, field: String): String? {
+        return try {
+            val txt = getApplication<Application>().assets.open("diseases.json")
+                .bufferedReader(Charsets.UTF_8).use { it.readText() }
+            JSONObject(txt).optJSONObject(label)?.optString(field)
+        } catch (ex: Exception) {
+            null
+        }
+    }
     private var leafClassifier: LeafClassifier? = null
 
     private fun scanLeaf(uri: Uri) {
@@ -596,11 +605,13 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                     knowledgeText(r.label, "en")?.let { addSystemMessage(it) }
                     knowledgeText(r.label, "ta")?.let { addSystemMessage(it) }
                     if (isModelReady) {
-                        val kb = knowledgeText(r.label, "en") ?: ""
-                        inputText = "Rewrite the text below in simple words, in under 60 words. Start directly with the summary, no introduction. Use ONLY facts from the text. Do not add any other cause, advice, chemical or variety. If the text mentions an insecticide or fungicide, say only: ask your local agriculture officer which one to use.\n\nTEXT:\n" + kb
+                        module?.resetContext()
+                        val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(r.label, "cause_en") ?: "")
+                        addSystemMessage("Below, the on-device AI (Llama) explains the disease in simple words. For treatment and prevention, follow the verified advice above.")
+                        inputText = "The plant disease is called " + name + ". Explain in simple words, in under 50 words, what it looks like and what causes it. Use this exact name and do not invent other names. Use ONLY the facts below. Do not give any treatment or advice.\n\nFACTS:\n" + what
                         sendMessage()
                     } else {
-                        addSystemMessage("Llama is not loaded, so no advice can be written.")
+                        addSystemMessage("Llama is not loaded, so no summary can be written. The verified advice above still applies.")
                     }
                 } else {
                     addSystemMessage("Not sure (" + pct + "% for " + name + "). Retake the photo: one leaf, close up, good light. Top guesses: " + top3)
