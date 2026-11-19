@@ -169,6 +169,15 @@ fun ChatScreen(
                         color = appColors.textOnNavBar,
                         fontSize = 14.sp
                     )
+                    androidx.compose.material3.TextButton(onClick = {
+                        viewModel.adviceLang = if (viewModel.adviceLang == "en") "ta" else "en"
+                    }) {
+                        Text(
+                            text = if (viewModel.adviceLang == "en") "EN" else "தமிழ்",
+                            color = appColors.textOnNavBar,
+                            fontSize = 14.sp
+                        )
+                    }
                     // Model switcher button - only visible in LoRA mode
                     if (viewModel.isLoraMode) {
                         IconButton(onClick = { showModelSwitcherDialog = true }) {

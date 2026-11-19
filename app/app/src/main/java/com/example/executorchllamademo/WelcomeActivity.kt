@@ -31,6 +31,7 @@ class WelcomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         if (Build.VERSION.SDK_INT >= 21) {
             window.statusBarColor = ContextCompat.getColor(this, R.color.status_bar)
             window.navigationBarColor = ContextCompat.getColor(this, R.color.nav_bar)

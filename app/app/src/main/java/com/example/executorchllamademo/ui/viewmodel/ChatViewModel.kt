@@ -56,6 +56,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
     var inputText by mutableStateOf("")
     var isModelReady by mutableStateOf(false)
     var isGenerating by mutableStateOf(false)
+    var adviceLang by mutableStateOf("en")
     var thinkMode by mutableStateOf(false)
     var showMediaSelector by mutableStateOf(false)
     var ramUsage by mutableStateOf("0 MB")
@@ -86,6 +87,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
 
     private var module: LlmModule? = null
     private var resultMessage: Message? = null
+    private var lastBubbleUpdateMs: Long = 0L
     private val demoSharedPreferences = DemoSharedPreferences(application)
     private var currentSettingsFields = ModuleSettings()
     private var appSettings = AppSettings()
@@ -159,7 +161,6 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
         appSettings = demoSharedPreferences.getAppSettings()
         val isUpdated = currentSettingsFields != updatedSettingsFields
         val isLoadModel = updatedSettingsFields.isLoadModel
-
         // Update LoRA mode state
         isLoraMode = updatedSettingsFields.isLoraMode
         availableModels = updatedSettingsFields.models
@@ -556,10 +557,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             val e = JSONObject(txt).optJSONObject(label) ?: return null
             if (lang == "ta") {
                 e.getString("name_ta") + "\n\n" +
-                        "அறிகுறிகள்: " + e.getString("symptoms_ta") + "\n\n" +
-                        "காரணம்: " + e.getString("cause_ta") + "\n\n" +
-                        "சிகிச்சை: " + e.getString("treatment_ta") + "\n\n" +
-                        "தடுப்பு: " + e.getString("prevention_ta")
+                        "Ã Â®â€¦Ã Â®Â±Ã Â®Â¿Ã Â®â€¢Ã Â¯ÂÃ Â®Â±Ã Â®Â¿Ã Â®â€¢Ã Â®Â³Ã Â¯Â: " + e.getString("symptoms_ta") + "\n\n" +
+                        "Ã Â®â€¢Ã Â®Â¾Ã Â®Â°Ã Â®Â£Ã Â®Â®Ã Â¯Â: " + e.getString("cause_ta") + "\n\n" +
+                        "Ã Â®Å¡Ã Â®Â¿Ã Â®â€¢Ã Â®Â¿Ã Â®Å¡Ã Â¯ÂÃ Â®Å¡Ã Â¯Ë†: " + e.getString("treatment_ta") + "\n\n" +
+                        "Ã Â®Â¤Ã Â®Å¸Ã Â¯ÂÃ Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â¯Â: " + e.getString("prevention_ta")
             } else {
                 e.getString("name_en") + "\n\n" +
                         "Symptoms: " + e.getString("symptoms_en") + "\n\n" +
@@ -585,7 +586,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
     private fun scanLeaf(uri: Uri) {
         if (isGenerating) return
         _messages.add(Message(uri.toString(), true, MessageType.IMAGE, 0))
-        _messages.add(Message("Scanning leaf...", false, MessageType.SYSTEM, 0))
+        _messages.add(Message("Scanning leaf... Tip: one leaf, close up, good light.", false, MessageType.SYSTEM, 0))
         executor.execute {
             try {
                 if (leafClassifier == null) {
@@ -597,19 +598,25 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                 val pct = (r.confidence * 100).toInt()
                 val name = r.label.replace("___", " ").replace("_", " ")
                 val top3 = r.top3.joinToString("; ") {
-                    it.first.replace("___", " ").replace("_", " ") + " " + (it.second * 100).toInt() + "%"
+                    it.first.replace("___", " ")
+                        .replace("_", " ") + " " + (it.second * 100).toInt() + "%"
                 }
                 ETLogging.getInstance().log("Leaf scan: " + top3 + " in " + ms + " ms")
                 if (r.isSure()) {
                     addSystemMessage("Detected: " + name + " (" + pct + "%), vision time " + ms + " ms")
-                    knowledgeText(r.label, "en")?.let { addSystemMessage(it) }
-                    knowledgeText(r.label, "ta")?.let { addSystemMessage(it) }
-                    if (isModelReady) {
+                    knowledgeText(r.label, adviceLang)?.let { addSystemMessage(it) }
+                    if (r.label.contains("healthy", ignoreCase = true)) {
+                        addSystemMessage(if (adviceLang == "ta") "Ã Â®Â¨Ã Â¯â€¹Ã Â®Â¯Ã Â¯Â Ã Â®Å½Ã Â®Â¤Ã Â¯ÂÃ Â®ÂµÃ Â¯ÂÃ Â®Â®Ã Â¯Â Ã Â®â€¢Ã Â®Â£Ã Â¯ÂÃ Â®Å¸Ã Â®Â±Ã Â®Â¿Ã Â®Â¯Ã Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â®Å¸Ã Â®ÂµÃ Â®Â¿Ã Â®Â²Ã Â¯ÂÃ Â®Â²Ã Â¯Ë†. Ã Â®â€¦Ã Â®ÂµÃ Â¯ÂÃ Â®ÂµÃ Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â¯â€¹Ã Â®Â¤Ã Â¯Â Ã Â®Â®Ã Â¯ÂÃ Â®Â´Ã Â¯ÂÃ Â®Å¡Ã Â¯Â Ã Â®Å¡Ã Â¯â€ Ã Â®Å¸Ã Â®Â¿Ã Â®Â¯Ã Â¯Ë†Ã Â®Â¯Ã Â¯ÂÃ Â®Â®Ã Â¯Â Ã Â®ÂªÃ Â®Â¾Ã Â®Â°Ã Â¯ÂÃ Â®â„¢Ã Â¯ÂÃ Â®â€¢Ã Â®Â³Ã Â¯Â." else "No disease found. Check the whole plant now and then.")
+                    } else if (isModelReady) {
                         module?.resetContext()
-                        val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(r.label, "cause_en") ?: "")
+                        val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(
+                            r.label,
+                            "cause_en"
+                        ) ?: "")
                         addSystemMessage("Below, the on-device AI (Llama) explains the disease in simple words. For treatment and prevention, follow the verified advice above.")
-                        inputText = "The plant disease is called " + name + ". Explain in simple words, in under 50 words, what it looks like and what causes it. Use this exact name and do not invent other names. Use ONLY the facts below. Do not give any treatment or advice.\n\nFACTS:\n" + what
-                        sendMessage()
+                        inputText =
+                            "The plant disease is called " + name + ". Explain in simple words, in under 50 words, what it looks like and what causes it. Use this exact name and do not invent other names. Use ONLY the facts below. Do not give any treatment or advice.\n\nFACTS:\n" + what
+                        sendMessage(name)
                     } else {
                         addSystemMessage("Llama is not loaded, so no summary can be written. The verified advice above still applies.")
                     }
@@ -617,7 +624,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                     addSystemMessage("Not sure (" + pct + "% for " + name + "). Retake the photo: one leaf, close up, good light. Top guesses: " + top3)
                 }
             } catch (e: Exception) {
-                addSystemMessage("Leaf scan failed: " + e.message)
+                addSystemMessage(if (e.message == "NOT_A_LEAF") "This does not look like a leaf. Retake the photo: one leaf, close up, good light." else "Leaf scan failed: " + e.message)
             }
         }
     }
@@ -701,7 +708,36 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
         return imageList
     }
 
+    private fun replyLooksBad(reply: String, disease: String): Boolean {
+        val trimmed = reply.trim()
+        val words = Regex("[\\p{L}\\p{N}]+")
+            .findAll(trimmed.lowercase(java.util.Locale.ROOT))
+            .map { it.value }.toList()
+
+        if (trimmed.length < 40 || trimmed.length > 700) return true
+        if (words.size < 8 || words.size > 90) return true
+        if (words.toSet().size.toDouble() / words.size < 0.45) return true
+        if (words.windowed(3).any { it[0] == it[1] && it[1] == it[2] }) return true
+
+        val repeatedPhrases = words.windowed(3)
+            .groupingBy { it.joinToString(" ") }.eachCount()
+        if (repeatedPhrases.values.any { it >= 3 }) return true
+
+        val normalizedReply = trimmed.replace(Regex("\\s+"), " ")
+        val normalizedDisease = disease.trim().replace(Regex("\\s+"), " ")
+        val diseasePattern = Regex(
+            "(?<![\\p{L}\\p{N}])" + Regex.escape(normalizedDisease) +
+                "(?![\\p{L}\\p{N}])",
+            RegexOption.IGNORE_CASE
+        )
+        return !diseasePattern.containsMatchIn(normalizedReply)
+    }
+
     fun sendMessage() {
+        sendMessage("")
+    }
+
+    private fun sendMessage(expectedDisease: String) {
         if (inputText.trim().isEmpty()) return
         if (!isModelReady || isGenerating) return
 
@@ -745,6 +781,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             ETLogging.getInstance().log("starting runnable generate()")
             isGenerating = true
 
+            var explanationFailed = false
             val generateStartTime = System.currentTimeMillis()
             if (ModelUtils.getModelCategory(
                     currentSettingsFields.modelType,
@@ -772,15 +809,49 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                 )
             } else {
                 ETLogging.getInstance().log("Running inference.. prompt=$finalPrompt")
-                module?.generate(finalPrompt, appSettings.maxSeqLen, this, false)
+                try {
+                    module?.generate(finalPrompt, appSettings.maxSeqLen, this, false)
+                } catch (e: Exception) {
+                    if (expectedDisease.isNotEmpty()) {
+                        explanationFailed = true
+                        ETLogging.getInstance().log("Leaf explanation generation failed")
+                    } else {
+                        addSystemMessage("Llama could not write the explanation. The verified advice above still applies.")
+                    }
+                }
             }
 
             val generateDuration = System.currentTimeMillis() - generateStartTime
             resultMessage?.let { msg ->
                 msg.totalGenerationTime = generateDuration
+                val rejectExplanation = expectedDisease.isNotEmpty() &&
+                    (explanationFailed || replyLooksBad(msg.text, expectedDisease))
                 val index = _messages.indexOfLast { it === msg }
                 if (index >= 0) {
-                    val updated = msg.copy()
+                    val updated = if (rejectExplanation) {
+                        Log.w("LeafCheck", "rejected reply (" + msg.text.trim().split(Regex("\\s+")).size + " words): " + msg.text)
+                        ETLogging.getInstance().log(
+                            "Leaf explanation rejected by output checker: $expectedDisease"
+                        )
+                        Message(
+                            "Llama could not write a clear explanation. The verified advice above still applies.",
+                            msg.isSent,
+                            msg.messageType,
+                            msg.promptID,
+                            msg.timestamp,
+                            msg.id
+                        ).also {
+                            it.tokensPerSecond = msg.tokensPerSecond
+                            it.totalGenerationTime = msg.totalGenerationTime
+                        }
+                    } else {
+                        if (expectedDisease.isNotEmpty()) {
+                            ETLogging.getInstance().log(
+                                "Leaf explanation passed output checker: $expectedDisease"
+                            )
+                        }
+                        msg.copy()
+                    }
                     _messages[index] = updated
                     resultMessage = updated
                 }
@@ -887,8 +958,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             }
         }
 
-        // Create a new Message reference to trigger recomposition under Compose strong
-        // skipping mode, which compares unstable parameters by reference equality (===).
+        // Redraw the chat bubble at most every 150 ms: fewer text-layout passes while Llama streams.
+        val nowMs = System.currentTimeMillis()
+        if (nowMs - lastBubbleUpdateMs < 150) return
+        lastBubbleUpdateMs = nowMs
         val index = _messages.indexOfLast { it === resultMessage }
         if (index >= 0) {
             val updated = resultMessage!!.copy()
