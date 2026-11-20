@@ -557,10 +557,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             val e = JSONObject(txt).optJSONObject(label) ?: return null
             if (lang == "ta") {
                 e.getString("name_ta") + "\n\n" +
-                        "Ã Â®â€¦Ã Â®Â±Ã Â®Â¿Ã Â®â€¢Ã Â¯ÂÃ Â®Â±Ã Â®Â¿Ã Â®â€¢Ã Â®Â³Ã Â¯Â: " + e.getString("symptoms_ta") + "\n\n" +
-                        "Ã Â®â€¢Ã Â®Â¾Ã Â®Â°Ã Â®Â£Ã Â®Â®Ã Â¯Â: " + e.getString("cause_ta") + "\n\n" +
-                        "Ã Â®Å¡Ã Â®Â¿Ã Â®â€¢Ã Â®Â¿Ã Â®Å¡Ã Â¯ÂÃ Â®Å¡Ã Â¯Ë†: " + e.getString("treatment_ta") + "\n\n" +
-                        "Ã Â®Â¤Ã Â®Å¸Ã Â¯ÂÃ Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â¯Â: " + e.getString("prevention_ta")
+                        "\u0B85\u0BB1\u0BBF\u0B95\u0BC1\u0BB1\u0BBF\u0B95\u0BB3\u0BCD: " + e.getString("symptoms_ta") + "\n\n" +
+                        "\u0B95\u0BBE\u0BB0\u0BA3\u0BAE\u0BCD: " + e.getString("cause_ta") + "\n\n" +
+                        "\u0B9A\u0BBF\u0B95\u0BBF\u0B9A\u0BCD\u0B9A\u0BC8: " + e.getString("treatment_ta") + "\n\n" +
+                        "\u0BA4\u0B9F\u0BC1\u0BAA\u0BCD\u0BAA\u0BC1: " + e.getString("prevention_ta")
             } else {
                 e.getString("name_en") + "\n\n" +
                         "Symptoms: " + e.getString("symptoms_en") + "\n\n" +
@@ -606,7 +606,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                     addSystemMessage("Detected: " + name + " (" + pct + "%), vision time " + ms + " ms")
                     knowledgeText(r.label, adviceLang)?.let { addSystemMessage(it) }
                     if (r.label.contains("healthy", ignoreCase = true)) {
-                        addSystemMessage(if (adviceLang == "ta") "Ã Â®Â¨Ã Â¯â€¹Ã Â®Â¯Ã Â¯Â Ã Â®Å½Ã Â®Â¤Ã Â¯ÂÃ Â®ÂµÃ Â¯ÂÃ Â®Â®Ã Â¯Â Ã Â®â€¢Ã Â®Â£Ã Â¯ÂÃ Â®Å¸Ã Â®Â±Ã Â®Â¿Ã Â®Â¯Ã Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â®Å¸Ã Â®ÂµÃ Â®Â¿Ã Â®Â²Ã Â¯ÂÃ Â®Â²Ã Â¯Ë†. Ã Â®â€¦Ã Â®ÂµÃ Â¯ÂÃ Â®ÂµÃ Â®ÂªÃ Â¯ÂÃ Â®ÂªÃ Â¯â€¹Ã Â®Â¤Ã Â¯Â Ã Â®Â®Ã Â¯ÂÃ Â®Â´Ã Â¯ÂÃ Â®Å¡Ã Â¯Â Ã Â®Å¡Ã Â¯â€ Ã Â®Å¸Ã Â®Â¿Ã Â®Â¯Ã Â¯Ë†Ã Â®Â¯Ã Â¯ÂÃ Â®Â®Ã Â¯Â Ã Â®ÂªÃ Â®Â¾Ã Â®Â°Ã Â¯ÂÃ Â®â„¢Ã Â¯ÂÃ Â®â€¢Ã Â®Â³Ã Â¯Â." else "No disease found. Check the whole plant now and then.")
+                        addSystemMessage(if (adviceLang == "ta") "\u0BA8\u0BCB\u0BAF\u0BCD \u0B8E\u0BA4\u0BC1\u0BB5\u0BC1\u0BAE\u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BAF\u0BAA\u0BCD\u0BAA\u0B9F\u0BB5\u0BBF\u0BB2\u0BCD\u0BB2\u0BC8. \u0B85\u0BB5\u0BCD\u0BB5\u0BAA\u0BCD\u0BAA\u0BCB\u0BA4\u0BC1 \u0BAE\u0BC1\u0BB4\u0BC1\u0B9A\u0BCD \u0B9A\u0BC6\u0B9F\u0BBF\u0BAF\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD \u0BAA\u0BBE\u0BB0\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD." else "No disease found. Check the whole plant now and then.")
                     } else if (isModelReady) {
                         module?.resetContext()
                         val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(
