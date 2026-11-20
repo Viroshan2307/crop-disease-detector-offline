@@ -30,7 +30,7 @@ class LeafClassifier(modelPath: String) {
             val b = bytes[2 * plane + i].toInt() and 0xFF
             if (g >= r - 10 && g > b + 15) plantPixels++
         }
-        if (plantPixels.toFloat() / plane < MIN_PLANT) throw IllegalArgumentException("NOT_A_LEAF")
+        android.util.Log.d("LeafGate", "plant share=" + (plantPixels.toFloat() / plane)); if (plantPixels.toFloat() / plane < MIN_PLANT) throw IllegalArgumentException("NOT_A_LEAF")
 
         val input = FloatArray(3 * plane)
         for (c in 0 until 3) {
@@ -55,7 +55,7 @@ class LeafClassifier(modelPath: String) {
     companion object {
         const val SIZE = 224
         const val THRESHOLD = 0.6f
-        const val MIN_PLANT = 0.20f
+        const val MIN_PLANT = 0.12f
         val MEAN = floatArrayOf(0.485f, 0.456f, 0.406f)
         val STD = floatArrayOf(0.229f, 0.224f, 0.225f)
         val CLASSES = listOf(
