@@ -88,6 +88,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
     private var module: LlmModule? = null
     private var resultMessage: Message? = null
     private var lastBubbleUpdateMs: Long = 0L
+    private var leafFacts: String = ""
     private val demoSharedPreferences = DemoSharedPreferences(application)
     private var currentSettingsFields = ModuleSettings()
     private var appSettings = AppSettings()
@@ -609,13 +610,10 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                         addSystemMessage(if (adviceLang == "ta") "\u0BA8\u0BCB\u0BAF\u0BCD \u0B8E\u0BA4\u0BC1\u0BB5\u0BC1\u0BAE\u0BCD \u0B95\u0BA3\u0BCD\u0B9F\u0BB1\u0BBF\u0BAF\u0BAA\u0BCD\u0BAA\u0B9F\u0BB5\u0BBF\u0BB2\u0BCD\u0BB2\u0BC8. \u0B85\u0BB5\u0BCD\u0BB5\u0BAA\u0BCD\u0BAA\u0BCB\u0BA4\u0BC1 \u0BAE\u0BC1\u0BB4\u0BC1\u0B9A\u0BCD \u0B9A\u0BC6\u0B9F\u0BBF\u0BAF\u0BC8\u0BAF\u0BC1\u0BAE\u0BCD \u0BAA\u0BBE\u0BB0\u0BC1\u0B99\u0BCD\u0B95\u0BB3\u0BCD." else "No disease found. Check the whole plant now and then.")
                     } else if (isModelReady) {
                         module?.resetContext()
-                        val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(
-                            r.label,
-                            "cause_en"
-                        ) ?: "")
-                        addSystemMessage("Below, the on-device AI (Llama) explains the disease in simple words. For treatment and prevention, follow the verified advice above.")
-                        inputText =
-                            "The plant disease is called " + name + ". Explain in simple words, in under 50 words, what it looks like and what causes it. Use this exact name and do not invent other names. Use ONLY the facts below. Do not give any treatment or advice.\n\nFACTS:\n" + what
+                        val what = (kbField(r.label, "symptoms_en") ?: "") + " " + (kbField(r.label, "cause_en") ?: "") + " " + (kbField(r.label, "treatment_en") ?: "") + " " + (kbField(r.label, "prevention_en") ?: "")
+                        leafFacts = what
+                        addSystemMessage("Below, the on-device AI (Llama) summarises the verified advice in simple words. If anything differs, follow the verified advice above.")
+                        inputText = "The plant disease is called " + name + ". In about 80 words and simple words, explain what it looks like, what causes it, and what the farmer should do. Use this exact name and do not invent other names. Use ONLY the facts below. Do not add any product names, doses or numbers that are not in the facts. End with: Ask your local agriculture officer.\n\nFACTS:\n" + what
                         sendMessage(name)
                     } else {
                         addSystemMessage("Llama is not loaded, so no summary can be written. The verified advice above still applies.")
@@ -708,14 +706,34 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
         return imageList
     }
 
-    private fun replyLooksBad(reply: String, disease: String): Boolean {
+    private fun finishedLeafReply(msg: Message): Message {
+        var t = msg.text.trim()
+        val nlIdx = t.indexOf('\n')
+        if (nlIdx > 0) {
+            val first = t.substring(0, nlIdx).trim()
+            if (first.startsWith("Here", ignoreCase = true) && first.endsWith(":")) {
+                t = t.substring(nlIdx + 1).trim()
+            }
+        }
+        val lower = t.lowercase(java.util.Locale.ROOT)
+        if (!lower.contains("agricultur") || !lower.contains("officer")) {
+            t = t + " Ask your local agriculture officer before using any spray or product."
+        }
+        return Message(t, msg.isSent, msg.messageType, msg.promptID, msg.timestamp, msg.id).also {
+            it.tokensPerSecond = msg.tokensPerSecond
+            it.totalGenerationTime = msg.totalGenerationTime
+            it.thinkingContent = msg.thinkingContent
+        }
+    }
+
+    private fun replyLooksBad(reply: String, disease: String, facts: String = ""): Boolean {
         val trimmed = reply.trim()
         val words = Regex("[\\p{L}\\p{N}]+")
             .findAll(trimmed.lowercase(java.util.Locale.ROOT))
             .map { it.value }.toList()
 
-        if (trimmed.length < 40 || trimmed.length > 700) return true
-        if (words.size < 8 || words.size > 90) return true
+        if (trimmed.length < 40 || trimmed.length > 900) return true
+        if (words.size < 8 || words.size > 130) return true
         if (words.toSet().size.toDouble() / words.size < 0.45) return true
         if (words.windowed(3).any { it[0] == it[1] && it[1] == it[2] }) return true
 
@@ -730,7 +748,20 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                 "(?![\\p{L}\\p{N}])",
             RegexOption.IGNORE_CASE
         )
-        return !diseasePattern.containsMatchIn(normalizedReply)
+        if (!diseasePattern.containsMatchIn(normalizedReply)) return true
+        val lowerReply = trimmed.lowercase(java.util.Locale.ROOT)
+        if (!lowerReply.contains("agricultur") || !lowerReply.contains("officer")) return true
+        if (Regex("\\d+(\\.\\d+)?\\s*(mg|ml|gm|kg|g|l|litres?|liters?|ppm|tbsp|tsp|oz|lb)\\b", RegexOption.IGNORE_CASE).containsMatchIn(trimmed)) return true
+        if (facts.isNotEmpty()) {
+            val known = Regex("[\\p{L}]+").findAll((facts + " " + disease).lowercase(java.util.Locale.ROOT))
+                .map { it.value.take(5) }.toSet()
+            val longWords = words.filter { w -> w.length >= 5 && w.all { ch -> ch.isLetter() } }
+            if (longWords.isNotEmpty()) {
+                val unknown = longWords.count { w -> w.take(5) !in known }
+                if (unknown.toDouble() / longWords.size > 0.40) return true
+            }
+        }
+        return false
     }
 
     fun sendMessage() {
@@ -825,7 +856,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
             resultMessage?.let { msg ->
                 msg.totalGenerationTime = generateDuration
                 val rejectExplanation = expectedDisease.isNotEmpty() &&
-                    (explanationFailed || replyLooksBad(msg.text, expectedDisease))
+                    (explanationFailed || replyLooksBad(finishedLeafReply(msg).text, expectedDisease, leafFacts))
                 val index = _messages.indexOfLast { it === msg }
                 if (index >= 0) {
                     val updated = if (rejectExplanation) {
@@ -850,7 +881,7 @@ class ChatViewModel(application: Application) : AndroidViewModel(application), L
                                 "Leaf explanation passed output checker: $expectedDisease"
                             )
                         }
-                        msg.copy()
+                        if (expectedDisease.isNotEmpty()) finishedLeafReply(msg) else msg.copy()
                     }
                     _messages[index] = updated
                     resultMessage = updated
