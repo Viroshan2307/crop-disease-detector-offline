@@ -1,0 +1,17 @@
+NOTICE
+
+This project adapts the ExecuTorch Llama demo Android app from Meta Platforms, Inc.
+(https://github.com/pytorch/executorch, examples under the executorch-examples repository),
+which is released under the BSD license. The original copyright and licence notices in the
+source files are kept.
+
+Third-party components
+- ExecuTorch (Meta Platforms, Inc.) - BSD license.
+- Llama 3.2 1B Instruct (Meta) - used under the Llama 3.2 Community License. The model files
+  are not distributed in this repository.
+- PlantVillage and PlantDoc datasets - used for training under their own terms. The datasets
+  are not distributed in this repository.
+- Disease advice in knowledge_base/diseases.json is compiled from public agricultural
+  extension sources, listed per entry.
+
+Author: Viroshan (Viroshan2307). Built for the Bharat AI-SoC Challenge, Problem Statement 1.
